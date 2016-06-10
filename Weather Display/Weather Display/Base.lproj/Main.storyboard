@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather_Display" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKN-Ic-JpB">
+                                <rect key="frame" x="268" y="20" width="65" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vrv-UW-XWb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w20-BL-RJz">
+                                <rect key="frame" x="150" y="231" width="300" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="fpR-Cd-9Dr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nlr-Db-Ez7">
+                                <rect key="frame" x="285" y="117" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="za8-c3-Qda"/>
+                                </constraints>
+                                <state key="normal" title="Find"/>
+                                <connections>
+                                    <action selector="findWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7ld-BB-RdR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPc-XY-AdG">
+                                <rect key="frame" x="252" y="60" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8YO-jD-OUp"/>
+                                    <constraint firstAttribute="width" constant="97" id="kVU-Tl-VnQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w20-BL-RJz" secondAttribute="bottom" constant="169" id="B06-DY-RwB"/>
+                            <constraint firstItem="Nlr-Db-Ez7" firstAttribute="centerX" secondItem="w20-BL-RJz" secondAttribute="centerX" id="FaA-Ev-jTo"/>
+                            <constraint firstItem="EKN-Ic-JpB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UWA-Om-Wgf"/>
+                            <constraint firstItem="Nlr-Db-Ez7" firstAttribute="top" secondItem="lPc-XY-AdG" secondAttribute="bottom" constant="27" id="Z40-yI-izb"/>
+                            <constraint firstItem="lPc-XY-AdG" firstAttribute="top" secondItem="EKN-Ic-JpB" secondAttribute="bottom" constant="19" id="bhS-x0-KpO"/>
+                            <constraint firstItem="EKN-Ic-JpB" firstAttribute="centerX" secondItem="lPc-XY-AdG" secondAttribute="centerX" id="fSf-hW-BMS"/>
+                            <constraint firstItem="EKN-Ic-JpB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="kyW-dC-x8y"/>
+                            <constraint firstItem="w20-BL-RJz" firstAttribute="top" secondItem="Nlr-Db-Ez7" secondAttribute="bottom" constant="84" id="oWC-Ni-ipR"/>
+                            <constraint firstItem="lPc-XY-AdG" firstAttribute="centerX" secondItem="Nlr-Db-Ez7" secondAttribute="centerX" id="uCf-21-xgO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityTextField" destination="lPc-XY-AdG" id="yhc-zH-EZd"/>
+                        <outlet property="resultLabel" destination="w20-BL-RJz" id="DlZ-Kn-QrJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="356"/>
+        </scene>
+    </scenes>
+</document>
